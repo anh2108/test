@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-void TimMax(int a, int b, int c) {
+int TimMax(int a, int b, int c) {
 
 	int max = a;
 
@@ -12,7 +12,9 @@ void TimMax(int a, int b, int c) {
 	if (c > max) {
 		max = c;
 	}
+	
 	printf("So lon nhat trong ba so %d, %d, %d la: %d", a, b, c, max);
+	return max;
 
 }
 
@@ -21,19 +23,24 @@ int tinhNamnhuan(int nam) {
 	int demNam = 0;
 
 	if (nam % 400 == 0) {
-		printf("\nla nam nhuan");
-		return 1;
+
+		printf("\n %d la nam nhuan", nam);
+
+		return nam, 1;
 
 	}
 	if (nam % 4 == 0 && nam % 100 != 0) {
-		printf("\nla nam nhuan");
-		return 1;
+
+		printf("\n %d la nam nhuan", nam);
+
+		return nam, 1;
 		
 	}
 	else {
-		demNam = 0;
-		printf("\nKhong phai nam nhuan");
-		return 0;
+		
+		printf("\n %d Khong phai nam nhuan", nam);
+
+		return nam, 0;
 	}
 	
 }
@@ -60,7 +67,7 @@ int main() {
 		case 1 :
 			printf("\nCN1. Tim so lon nhat trong 3 so");
 
-			TimMax (5, 3, 4 );
+			int max = TimMax (5, 3, 4 );
 
 			break;
 
